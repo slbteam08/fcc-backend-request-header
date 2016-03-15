@@ -9,7 +9,7 @@ app.get('/', function (req, res) {
   res.send(JSON.stringify({
     ipaddress: req.ip,
     language: req.acceptsLanguages()[0],
-    softwre: req.useragent.source.match(/\(([^\)]+)\)/)[1]
+    software: req.useragent.source.match(/\(([^\)]+)\)/)[1]
   }));
 });
 
