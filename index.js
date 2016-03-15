@@ -3,7 +3,9 @@ var app = express();
 var useragent = require('express-useragent');
 
 app.use(useragent.express());
+app.set('trust proxy', true);
 app.get('/', function (req, res) {
+  res.header("Content-Type", "application/json; charset=utf-8");
   res.send(JSON.stringify({
     ipaddress: req.ip,
     language: req.acceptsLanguages()[0],
